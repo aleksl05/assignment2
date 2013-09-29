@@ -1,0 +1,23 @@
+List over python symbols
+# - comments
+print - keyword to print variable, strings, functions and so on.
+% - makes the connection between string and variable
+%d - integer connection
+%i - integer connection
+%s% - string connection
+%r - string connection
+%f - float point connection (float will show more decimals than integer
+= used to assign values to the variable to the lest of the equal-sign
+== used to check if two values (number-values) are the same
++ - add
+- - subtraction
+* - multiply
+/ - divide
+=+ - this means that the variable is equal and adding together the variable to the right
+""" - used to either make documentation or make strings last in several lines without writing print several times"""
+\t - tab, makes the printing line begin longer into the side
+\n - new line, every time this is written, there will be a new line
+variable_name = variablenames should always start with a letter and not a special symbol or numers, but may contain both numbers and letters
+import - keyword to "import" modules/other python- files to use its function, variables or features
+def - keyword used to define functions and so on
+function_name() - a function created to make "something" happen.
