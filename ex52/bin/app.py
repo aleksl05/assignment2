@@ -16,25 +16,30 @@ if web.config.get('_session') is None:
 else:
     session = web.config._session
 
-
+#This is the class that is being "runned" first and where everything starts
+#It sets the room to be START, which is bedroom. 
 class Index(object):
     def GET(self):
         session.room = map.START
         web.seeother("/game")
 		
-
+#Player-class which is used to store letters. Was meant to become bigger and
+#the possibility to store keys to open doors and stuff, but didn't get the time to do it.
 class Player(object):
 	def __init__(self, name):
 		self.name = name
 		self.notebook = [] 
-		
+	
+	#Simple function that add letters to the notebook
 	def add_to_notebook(letter):
 		self.notebook.append(letter)
 		
 
-
+#creates a player-object which is being used in the GameEngine.
 player = Player("Aleksander")
 		
+	
+#This is where everything happens, where input is being fetched and analyzed and used.
 class GameEngine(object):
 	
 	def __init__(self):
