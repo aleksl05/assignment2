@@ -1,7 +1,7 @@
 from sys import exit
 from random import randint
 from operator import eq
-import ex45to
+import commands
 
 
 class Scene(object):
@@ -9,6 +9,8 @@ class Scene(object):
 	def enter(self):
 		print "This scene is not yet configured. Subclass it and implement enter()."
 		exit(1)
+		
+	
 		
 class Engine(object):
 	def __init__(self,scene_map):
@@ -52,10 +54,10 @@ class Hall(Scene):
 			print self.letter
 			return self.place
 		elif action == "check notebook":
-			ex45to.checkbook()
+			commands.checkbook()
 			return self.place
 		elif action == "store letter":
-			ex45to.addbook(self.letter)
+			commands.addbook(self.letter.pop())
 			return self.place
 			print "letter are now stored in your notebook"
 		elif action == "kitchen":
@@ -69,13 +71,11 @@ class Hall(Scene):
 		elif action == "bathroom":
 			return 'bathroom'
 		elif action == "help":
-			ex45to.help()
+			commands.help()
 			return self.place
 		elif action == "guess":
-			ex45to.guessword()
+			commands.guessword()
 			return self.place
-		elif action == "skriv":
-			skriv()
 		else:
 			print "Please choose one of the commands"
 			return self.place
@@ -101,10 +101,10 @@ class Livingroom(Scene):
 			print self.letter
 			return self.place
 		elif action == "check notebook":
-			ex45to.checkbook()
+			commands.checkbook()
 			return self.place
 		elif action == "store letter":
-			ex45to.addbook(self.letter)
+			commands.addbook(self.letter)
 			return self.place
 			print "letter are now stored in your notebook"
 		elif action == "kitchen":
@@ -118,13 +118,11 @@ class Livingroom(Scene):
 		elif action == "bathroom":
 			return 'bathroom'
 		elif action == "help":
-			ex45to.help()
+			commands.help()
 			return self.place
 		elif action == "guess":
-			ex45to.guessword()
+			commands.guessword()
 			return self.place
-		elif action == "skriv":
-			skriv()
 		else:
 			print "Please choose one of the commands"
 			return self.place
@@ -143,10 +141,10 @@ class Bathroom(Scene):
 			print self.letter
 			return self.place
 		elif action == "check notebook":
-			ex45to.checkbook()
+			commands.checkbook()
 			return self.place
 		elif action == "store letter":
-			ex45to.addbook(self.letter)
+			commands.addbook(self.letter)
 			return self.place
 			print "letter are now stored in your notebook"
 		elif action == "kitchen":
@@ -160,13 +158,11 @@ class Bathroom(Scene):
 		elif action == "bathroom":
 			return 'bathroom'
 		elif action == "help":
-			ex45to.help()
+			commands.help()
 			return self.place
 		elif action == "guess":
-			ex45to.guessword()
+			commands.guessword()
 			return self.place
-		elif action == "skriv":
-			skriv()
 		else:
 			print "Please choose one of the commands"
 			return self.place
@@ -176,7 +172,7 @@ class Bedroom(Scene):
 		self.letter = ['y']
 		self.place = 'bedroom'
 	
-		print "You are in the %s" %self.place
+		print "You are in the %s, if you want help write 'help'" %self.place
 
 		
 		action = raw_input("> ")
@@ -185,10 +181,10 @@ class Bedroom(Scene):
 			print self.letter
 			return self.place
 		elif action == "check notebook":
-			ex45to.checkbook()
+			commands.checkbook()
 			return self.place
 		elif action == "store letter":
-			ex45to.addbook(self.letter)
+			commands.addbook(self.letter)
 			return self.place
 			print "letter are now stored in your notebook"
 		elif action == "kitchen":
@@ -202,13 +198,11 @@ class Bedroom(Scene):
 		elif action == "bathroom":
 			return 'bathroom'
 		elif action == "help":
-			ex45to.help()
+			commands.help()
 			return self.place
 		elif action == "guess":
-			ex45to.guessword()
+			commands.guessword()
 			return self.place
-		elif action == "skriv":
-			skriv()
 		else:
 			print "Please choose one of the commands"
 			return self.place
@@ -227,10 +221,10 @@ class Kitchen(Scene):
 			print self.letter
 			return self.place
 		elif action == "check notebook":
-			ex45to.checkbook()
+			commands.checkbook()
 			return self.place
 		elif action == "store letter":
-			ex45to.addbook(self.letter)
+			commands.addbook(self.letter.pop())
 			return self.place
 			print "letter are now stored in your notebook"
 		elif action == "kitchen":
@@ -244,13 +238,11 @@ class Kitchen(Scene):
 		elif action == "bathroom":
 			return 'bathroom'
 		elif action == "help":
-			ex45to.help()
+			commands.help()
 			return self.place
 		elif action == "guess":
-			ex45to.guessword()
+			commands.guessword()
 			return self.place
-		elif action == "skriv":
-			skriv()
 		else:
 			print "Please choose one of the commands"
 			return self.place

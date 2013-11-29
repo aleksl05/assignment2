@@ -1,0 +1,28 @@
+$def with (room)
+
+<h1> $room.name </h1>
+<div id = "description">
+<pre>
+<h3 style = "font-size: 15px;">Description:</h3>
+$room.description
+</pre>
+</div>
+$if room.name == "lose":
+    <p><a href="/">Play Again?</a></p>
+$else:
+    <p>
+	<label name = "action">
+    <form action="/game" method="POST">
+        - <input type="text" name="action" size = "100"> <input type="SUBMIT">
+    </form>
+    </p>
+	</label>
+	<div id="information">
+<h3 style = "font-size: 15px;">Help:</h3>
+$if room.output:
+	<p id="output">$room.output</p>
+	</div>
+	<div id = "paths">
+	<h4> These are the paths: </h4>
+		<p>$room.paths.keys()</p>
+		</div>

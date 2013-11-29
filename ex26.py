@@ -52,7 +52,7 @@ print "--------------"
 print poem
 print "--------------"
 
-five = 10 - 2 + 3 - 5
+five = 10 - 2 + 3 - 6
 print "This should be five: %s" % five
 
 def secret_formula(started):
@@ -74,11 +74,12 @@ print "We can also do that this way:"
 print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
 
 
-sentence = "All good things come to those who weight."
+sentence = "All good things come to those who wait."
 
 words = break_words(sentence)
 sorted_words = sort_words(words)
 
+print sentence
 print_first_word(words)
 print_last_word(words)
 print_first_word(sorted_words)
